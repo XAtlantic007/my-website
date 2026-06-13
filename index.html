@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>普拉提教练端会员管理智能体</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">P</span>
+          <div>
+            <strong>普拉提教练端</strong>
+            <span>会员管理智能体</span>
+          </div>
+        </div>
+        <nav class="nav" aria-label="主导航">
+          <button class="nav-btn active" type="button" data-view="dashboard">总览</button>
+          <button class="nav-btn" type="button" data-view="members">会员档案</button>
+          <button class="nav-btn" type="button" data-view="sessions">课程记录</button>
+          <button class="nav-btn" type="button" data-view="summary">智能总结</button>
+          <button class="nav-btn" type="button" data-view="reports">进度报告</button>
+          <button class="nav-btn" type="button" data-view="analysis">AI分析中心</button>
+          <button class="nav-btn" type="button" data-view="library">动作库</button>
+          <button class="nav-btn" type="button" data-view="images">画图</button>
+          <button class="nav-btn" type="button" data-view="data">数据管理</button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Coach Workspace</p>
+            <h1 id="pageTitle">总览</h1>
+          </div>
+          <div class="top-actions">
+            <label class="select-wrap">
+              <span>当前会员</span>
+              <select id="memberSelect"></select>
+            </label>
+            <button class="icon-btn" type="button" id="newMemberBtn" title="新建会员" aria-label="新建会员">+</button>
+          </div>
+        </header>
+
+        <section id="view-dashboard" class="view active"></section>
+        <section id="view-members" class="view"></section>
+        <section id="view-sessions" class="view"></section>
+        <section id="view-summary" class="view"></section>
+        <section id="view-reports" class="view"></section>
+        <section id="view-analysis" class="view"></section>
+        <section id="view-library" class="view"></section>
+        <section id="view-images" class="view"></section>
+        <section id="view-data" class="view"></section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <header>
+          <h2 id="modalTitle">提示</h2>
+          <button class="plain-btn" type="button" data-close-modal aria-label="关闭">×</button>
+        </header>
+        <div id="modalBody" class="modal-body"></div>
+        <footer>
+          <button class="primary-btn" type="button" data-close-modal>知道了</button>
+        </footer>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
